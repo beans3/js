@@ -11,16 +11,27 @@ const rabbit = {
     color: 'whtie',
     size: null,
     birthDate: new Date(),
-    symbole: Symbol('id'),
+    //symbole: Symbol('id'),
     jump: () => {
-        console.log(`${name} can jump!`)
+        console.log(`${name} can jump!`);
     },
-}
+};
 
 json = JSON.stringify(rabbit);
 console.log(json);
 
 json = JSON.stringify(rabbit, ['name']);
 console.log(json);
+
+json = JSON.stringify(rabbit, ['name', 'color', 'size']);
+console.log(json);
+
+json = JSON.stringify(rabbit, (key, value) => {
+    console.log(`key: ${key}, value: ${value}`);
+    return key === 'name' ? 'ellie' : value;
+});
+
+console.log(json);
+
 
 // 2. JSON to Object
