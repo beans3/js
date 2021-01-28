@@ -26,9 +26,7 @@ function printWD (print, timeout) {
 
 printWD(console.log('async callback'), 2000)
 
-// 콜백지옥 예제
 class UserST {
-  // 로그인
   loginUser (id, password, onSuccess, onError) {
     setTimeout(() => {
       if (
@@ -42,7 +40,6 @@ class UserST {
     }, 2000)
   }
 
-  // 사용자 직급 받아오기
   getRoles (user, onSuccess, onError) {
     setTimeout(() => {
       if (user === 'ellie') {
@@ -69,7 +66,6 @@ userST.loginUser(
       user,
       userRole => {
         alert(`Hello ${userRole.name}, you have a ${userRole.role} role`)
-        // alert(`Hello ${user.name}, you have a ${user.role} role`)
       },
       error => {
         console.log(error)
